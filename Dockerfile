@@ -12,6 +12,14 @@ RUN     apt-get update -y              &&  \
         apt-get install telnet -y      &&  \
         apt-get install  apache2 -y  
 
+# install telnet     
+RUN     DEBIAN_FRONTEND=noninteractive  apt-get update -y           &&  \   
+        DEBIAN_FRONTEND=noninteractive  apt-get install telnet -y   &&  \
+        DEBIAN_FRONTEND=noninteractive  apt-get install  apache2 -y  
+
+# Open port 80 on container
+EXPOSE 80        
+
 # Open port 80
 EXPOSE   80
 
